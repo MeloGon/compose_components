@@ -42,12 +42,18 @@ class MainActivity : ComponentActivity() {
 //                        selected = status,
 //                        onCheckedChange = { myNewStatus -> status = myNewStatus })
 //                    MyCheckboxWithTextCompleted(checkInfo = checkInfo)
-                    val myOptions = getOptions(listOf("Kevyn","Ejemplo","Pokemon"))
-                    Column {
-                        myOptions.forEach{
-                            MyCheckboxWithTextCompleted(checkInfo = it)
-                        }
-                    }
+
+//                    val myOptions = getOptions(listOf("Kevyn","Ejemplo","Pokemon"))
+//                    var selected by rememberSaveable { mutableStateOf("Kevyn") }
+//                    Column (modifier = Modifier.padding(innerPadding)){
+//                        MyTriStatusCheckbox()
+//                        myOptions.forEach{
+//                            MyCheckboxWithTextCompleted(checkInfo = it)
+//                        }
+//                        MyRadioButtonListHoistin (name = selected, onItemSelected = { selected = it})
+                    //MyCard(modifier = Modifier.padding(innerPadding))
+                    //MyBadgeBox(modifier = Modifier.padding(innerPadding))
+                    MyDropdown(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
