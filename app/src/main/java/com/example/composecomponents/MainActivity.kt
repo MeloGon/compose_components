@@ -53,7 +53,10 @@ class MainActivity : ComponentActivity() {
 //                        MyRadioButtonListHoistin (name = selected, onItemSelected = { selected = it})
                     //MyCard(modifier = Modifier.padding(innerPadding))
                     //MyBadgeBox(modifier = Modifier.padding(innerPadding))
-                    MyDropdown(modifier = Modifier.padding(innerPadding))
+//                    MyDropdown(modifier = Modifier.padding(innerPadding))
+                   // AlertDialogDoc(modifier = Modifier.padding(innerPadding))
+                    var show by remember { mutableStateOf(true) }
+                    ConfirmationDialog(Modifier.padding(innerPadding),show = show, onDismiss = {show=false})
                 }
             }
         }
