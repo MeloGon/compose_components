@@ -54,9 +54,10 @@ class MainActivity : ComponentActivity() {
                     //MyCard(modifier = Modifier.padding(innerPadding))
                     //MyBadgeBox(modifier = Modifier.padding(innerPadding))
 //                    MyDropdown(modifier = Modifier.padding(innerPadding))
-                   // AlertDialogDoc(modifier = Modifier.padding(innerPadding))
-                    var show by remember { mutableStateOf(true) }
-                    ConfirmationDialog(Modifier.padding(innerPadding),show = show, onDismiss = {show=false})
+                    // AlertDialogDoc(modifier = Modifier.padding(innerPadding))
+//                    var show by remember { mutableStateOf(true) }
+//                    ConfirmationDialog(Modifier.padding(innerPadding),show = show, onDismiss = {show=false})
+                    SuperHeroWithEspecialControls(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
