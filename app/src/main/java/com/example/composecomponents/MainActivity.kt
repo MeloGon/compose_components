@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
                     // AlertDialogDoc(modifier = Modifier.padding(innerPadding))
 //                    var show by remember { mutableStateOf(true) }
 //                    ConfirmationDialog(Modifier.padding(innerPadding),show = show, onDismiss = {show=false})
-                    SuperHeroWithEspecialControls(modifier = Modifier.padding(innerPadding))
+                    SuperHeroStickyView(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

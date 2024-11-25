@@ -2,6 +2,7 @@ package com.example.composecomponents
 
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -136,7 +137,7 @@ fun SuperHeroWithEspecialControls(modifier: Modifier = Modifier) {
                 rvState.firstVisibleItemIndex > 0
             }
         }
-        
+
         if (showButton) {
             Button(onClick = {
                 //lleva al primer item
@@ -153,4 +154,26 @@ fun SuperHeroWithEspecialControls(modifier: Modifier = Modifier) {
     }
 
 
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun SuperHeroStickyView(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    val superHero: Map<String, List<SuperHero>> = getSuperheroes().groupBy { it.publisher }
+    LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+
+        superHero.forEach { (publisher, mySuperHero) ->
+            stickyHeader {
+                Text(text = publisher)
+            }
+            items(mySuperHero) {
+                ItemHero(it) {
+                    Toast.makeText(context, it.superheroName, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
+    }
 }
